@@ -56,7 +56,7 @@
 Simple program to download youtube video audio
 
 ### Built With
-Python 3.9 But you can use lower version aswell
+Python 3.9 But you can use lower version as well
 
 ## Getting Started
 
