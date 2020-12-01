@@ -19,6 +19,6 @@ while True:
             print(YouTube(url).streams.filter(only_audio=True, mime_type="audio/mp4").first().download());
 
         except Exception as ex:
-            print("{0}".format(ex.args));       
+            print(ex.args);       
     else:
         print("Please enter valid youtube url");
