@@ -51,7 +51,7 @@
 
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+![Screenshot]
 
 Simple program to download youtube video audio
 
@@ -77,11 +77,9 @@ git clone https://github.com/iwan0129/Youtube-Audio-Downloader.git
 
 ## Usage
 
-Start the program. Start GTA5 and enter public online lobby. After you load the lobby press enter and wait for 10 seconds. After the empty session is made you can close the program
-
-## Note
-
-If you want to change the time for which the game thread is frozen look at `private const int SuspendTime` in [Program.cs]
+Start the program.<br>
+Once the program outputs to enter url copy the url of the youtube video and paste in.<br>
+Then press enter and wait for the audio to be downloaded<br>
 
 ## Roadmap
 
@@ -128,5 +126,5 @@ uzunow0129@gmail.com
 [followers]: https://img.shields.io/github/followers/iwan0129?style=for-the-badge
 [paypal-url]: https://paypal.me/iwan0129?locale.x=en_US
 [paypal-donate]: https://img.shields.io/badge/donate-PayPal-104098.svg?style=for-the-badge&logo=PayPal
-[Program.cs]: https://github.com/iwan0129/Youtube-Audio-Downloader/blob/master/GTA5%20Empty%20Session%20Maker/Program.cs
 [downloads-shield]: https://img.shields.io/github/downloads/iwan0129/Youtube-Audio-Downloader/total.svg?style=for-the-badge
+[Screenshot]: Images/Screenshot.png
