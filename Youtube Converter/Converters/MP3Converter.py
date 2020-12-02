@@ -13,9 +13,10 @@ class MP3Converter:
         self.url = url;
 
     def progress_callback(self, stream = None, chunk = None, file_handle = None, bytes_remaining = None):
-        size = stream.filesize - file_handle;
+        file_size = stream.filesize;
+        remaining = file_size - file_handle;
         print('\r' + '{0} [%s%s]%.2f%%'.format(stream.title) 
-              % ('█' * int(size*20/stream.filesize), ' '*(20-int(size*20/stream.filesize)), float(size/stream.filesize*100)), end='')
+              % ('█' * int(remaining*20/file_size), ' '*(20-int(remaining*20/file_size)), float(remaining/file_size*100)), end='')
 
     def complete_callback(self, stream, file_handle):
         print('\n'*2);
@@ -30,12 +31,9 @@ class MP3Converter:
     
     def convert(self):
         try:
-            youtube = YouTube(self.url, on_progress_callback=self.progress_callback, on_complete_callback=self.complete_callback);
-            
+            youtube = YouTube(self.url, on_progress_callback=self.progress_callback, on_complete_callback=self.complete_callback);          
             video_path = youtube.streams.filter().first().download();
-            
             self.make_mp3(video_path, youtube.title);
-
             os.unlink(video_path);
         except Exception as ex:
             print(ex.args);
