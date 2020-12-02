@@ -3,7 +3,7 @@ try:
     import os;
     from pytube import YouTube;
     from pytube import Playlist;
-    from moviepy import *
+    from moviepy.editor import *;
 except Exception as ex:
         print('Missing modules: {0}'.format(ex.args));
 
