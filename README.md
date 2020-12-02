@@ -13,24 +13,24 @@
 <br />
 <p align="center">
   <!--
-  <a href="https://github.com/iwan0129/Youtube-Audio-Downloader">
+  <a href="https://github.com/iwan0129/Youtube-Converter">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
   -->
   
-  <h3 align="center">Youtube Audio Downloader</h3>
+  <h3 align="center">Youtube Converter</h3>
 
   <p align="center">
-    Simple program to download youtube video audio
+    Simple program to convert youtube video to mp3 file
     <br />
-    <a href="https://github.com/iwan0129/Youtube-Audio-Downloader"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/iwan0129/Youtube-Converter"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/iwan0129/Youtube-Audio-Downloader">View Demo</a>
+    <a href="https://github.com/iwan0129/Youtube-Converter">View Demo</a>
     ·
-    <a href="https://github.com/iwan0129/Youtube-Audio-Downloader/issues">Report Bug</a>
+    <a href="https://github.com/iwan0129/Youtube-Converter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/iwan0129/Youtube-Audio-Downloader/issues">Request Feature</a>
+    <a href="https://github.com/iwan0129/Youtube-Converter/issues">Request Feature</a>
   </p>
 </p>
 
@@ -53,26 +53,29 @@
 
 ![Screenshot]
 
-Simple program to download youtube video audio
+Simple program to convert youtube video to mp3 file
 
 ### Built With
-Python 3.9 But you can use lower version as well
+Python 3.7.8
 
 ## Getting Started
 
 ### Prerequisites
 
-You need pytube installed
-* pip
+* pytube
 ```sh
 $ python -m pip install pytube
+```
+* moviepy
+```sh
+$ python -m pip install moviepy
 ```
 
 ### Installation
 
 Clone the repo
 ```sh
-git clone https://github.com/iwan0129/Youtube-Audio-Downloader.git
+git clone https://github.com/iwan0129/Youtube-Converter.git
 ```
 
 ## Usage
@@ -83,7 +86,7 @@ Then press enter and wait for the audio to be downloaded<br>
 
 ## Roadmap
 
-See the [open issues](https://github.com/iwan0129/Youtube-Audio-Downloader/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/iwan0129/Youtube-Converter/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 
@@ -109,22 +112,22 @@ uzunow0129@gmail.com
 * [GitHub Pages](https://pages.github.com)
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[contributors-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[forks-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/network/members
-[stars-shield]: https://img.shields.io/github/stars/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[stars-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[issues-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/issues
-[license-shield]: https://img.shields.io/github/license/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[license-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[contributors-url]: https://github.com/iwan0129/Youtube-Converter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[forks-url]: https://github.com/iwan0129/Youtube-Converter/network/members
+[stars-shield]: https://img.shields.io/github/stars/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[stars-url]: https://github.com/iwan0129/Youtube-Converter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[issues-url]: https://github.com/iwan0129/Youtube-Converter/issues
+[license-shield]: https://img.shields.io/github/license/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[license-url]: https://github.com/iwan0129/Youtube-Converter/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
-[repo-size]: https://img.shields.io/github/repo-size/iwan0129/Youtube-Audio-Downloader.svg?label=repository%20size&style=for-the-badge
-[commit-activity]: https://img.shields.io/github/commit-activity/m/iwan0129/Youtube-Audio-Downloader.svg?style=for-the-badge
-[commit-url]: https://github.com/iwan0129/Youtube-Audio-Downloader/commits/master
+[repo-size]: https://img.shields.io/github/repo-size/iwan0129/Youtube-Converter.svg?label=repository%20size&style=for-the-badge
+[commit-activity]: https://img.shields.io/github/commit-activity/m/iwan0129/Youtube-Converter.svg?style=for-the-badge
+[commit-url]: https://github.com/iwan0129/Youtube-Converter/commits/master
 [followers]: https://img.shields.io/github/followers/iwan0129?style=for-the-badge
 [paypal-url]: https://paypal.me/iwan0129?locale.x=en_US
 [paypal-donate]: https://img.shields.io/badge/donate-PayPal-104098.svg?style=for-the-badge&logo=PayPal
-[downloads-shield]: https://img.shields.io/github/downloads/iwan0129/Youtube-Audio-Downloader/total.svg?style=for-the-badge
+[downloads-shield]: https://img.shields.io/github/downloads/iwan0129/Youtube-Converter/total.svg?style=for-the-badge
 [Screenshot]: Images/Screenshot.png
