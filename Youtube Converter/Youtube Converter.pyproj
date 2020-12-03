@@ -26,6 +26,9 @@
     <Compile Include="Converters\MP3Converter.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tools\Utilities.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Source.py" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
