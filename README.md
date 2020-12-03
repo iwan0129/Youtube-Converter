@@ -64,11 +64,11 @@ Python 3.7.8
 
 * pytube
 ```sh
-$ python -m pip install pytube
+$ pip install pytube
 ```
 * moviepy
 ```sh
-$ python -m pip install moviepy
+$ pip install moviepy
 ```
 
 ### Installation
