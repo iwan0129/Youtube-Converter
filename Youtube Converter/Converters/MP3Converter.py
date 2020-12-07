@@ -30,13 +30,8 @@ class MP3Converter:
     
     def convert(self):
         try:
-            youtube = YouTube(self.url, on_progress_callback=self.progress_callback, on_complete_callback=self.complete_callback);          
-            
-            if (contains_invalid_chars(youtube.title)):
-                self.current_title = format_title(youtube.title);
-            else:
-                self.current_title = youtube.title;
-
+            youtube = YouTube(self.url, on_progress_callback=self.progress_callback, on_complete_callback=self.complete_callback);                    
+            self.current_title = format_title(youtube.title) if contains_invalid_chars(youtube.title) else youtube.title;
             video_path = youtube.streams.filter().first().download(filename=self.current_title);
             self.make_mp3(video_path, self.current_title);
             self.current_title = '';
