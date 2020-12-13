@@ -32,9 +32,16 @@ class MP3Converter:
         try:
             youtube = YouTube(self.url, on_progress_callback=self.progress_callback, on_complete_callback=self.complete_callback);                    
             self.current_title = format_title(youtube.title) if contains_invalid_chars(youtube.title) else youtube.title;
-            video_path = youtube.streams.filter().first().download(filename=self.current_title);
-            self.make_mp3(video_path, self.current_title);
-            self.current_title = '';
-            os.unlink(video_path);
+            video_stream = youtube.streams.filter().first();
+            
+            if (video_stream != None):
+                video_path = video_stream.download(filename=self.current_title);
+                self.make_mp3(video_path, self.current_title);
+                self.current_title = '';
+                os.unlink(video_path);
+            else:
+                print('Unable to download video due to youtube protection.\nPlease try with other video.');
+                
         except Exception as ex:
             print(ex.args);
+            pass;
