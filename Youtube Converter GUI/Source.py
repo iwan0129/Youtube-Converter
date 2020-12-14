@@ -4,10 +4,6 @@ from threading import Thread;
 
 import time;
 import PySimpleGUI as sg;
-import win32gui;
-import win32.lib.win32con as win32con;
-
-win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_HIDE);
 
 sg.theme('dark grey 9');
 
