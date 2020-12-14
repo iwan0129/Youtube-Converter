@@ -89,6 +89,10 @@ $ pip install moviepy
 ```sh
 $ pip install PySimpleGUI
 ```
+* pywin32
+```sh
+$ pip install pywin32
+```
 
 ### Installation
 
