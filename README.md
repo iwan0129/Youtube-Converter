@@ -51,7 +51,11 @@
 
 ## About The Project
 
+# Youtube Converter
 ![Screenshot]
+
+# Youtube Converter GUI 
+![Screenshot-2]
 
 Simple program to convert youtube video to mp3 file
 
@@ -62,6 +66,7 @@ Python 3.7.8
 
 ### Prerequisites
 
+#### Youtube Converter
 * pytube
 ```sh
 $ pip install pytube
@@ -69,6 +74,20 @@ $ pip install pytube
 * moviepy
 ```sh
 $ pip install moviepy
+```
+
+#### Youtube Converter GUI
+* pytube
+```sh
+$ pip install pytube
+```
+* moviepy
+```sh
+$ pip install moviepy
+```
+* PySimpleGUI
+```sh
+$ pip install PySimpleGUI
 ```
 
 ### Installation
@@ -131,3 +150,5 @@ uzunow0129@gmail.com
 [paypal-donate]: https://img.shields.io/badge/donate-PayPal-104098.svg?style=for-the-badge&logo=PayPal
 [downloads-shield]: https://img.shields.io/github/downloads/iwan0129/Youtube-Converter/total.svg?style=for-the-badge
 [Screenshot]: Images/Screenshot.png
+[Screenshot-2]: Images/Screenshot-2.png
+
