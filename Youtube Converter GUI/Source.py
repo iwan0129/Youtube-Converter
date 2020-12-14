@@ -7,7 +7,7 @@ import PySimpleGUI as sg;
 import win32gui;
 import win32.lib.win32con as win32con;
 
-win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_HIDE)
+win32gui.ShowWindow(win32gui.GetForegroundWindow() , win32con.SW_HIDE);
 
 sg.theme('dark grey 9');
 
@@ -20,6 +20,8 @@ layout = [[sg.Text('                             Youtube Url', font='Courier, 16
 window = sg.Window('Youtube Converter', layout);
 
 download_notified = False;
+
+downloading = False;
 
 def progress_callback(stream = None, chunk = None, file_handle = None, bytes_remaining = None):
     global download_notified;
@@ -45,17 +47,22 @@ def complete_callback(stream, file_handle):
     textbox.update(textbox.get() + '\nWriting Audio File...\n');
 
 def complete_audiofile(path):
+    global downloading;
+
     textbox = window['-OUTPUT-'];
     textbox.update(textbox.get() + '{0}\n\nDone.\n'.format(path));
     progress_bar = window['progress'];
-    progress_bar.UpdateBar(0, 100)
+    progress_bar.UpdateBar(0, 100);
+
+    downloading = False;
 
 while True:
     event, values = window.read();
 
-    if event == 'Convert':
+    if event == 'Convert' and not downloading:
         mp3converter = MP3Converter(values['-URL-'], progress_callback, complete_callback, complete_audiofile);
         Thread(target = mp3converter.convert, daemon=True).start();
+        downloading = True;
         pass;
 
     elif event == sg.WINDOW_CLOSED:
