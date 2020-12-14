@@ -18,7 +18,7 @@ class MP3Converter:
     def make_mp3(self, video_path, mp3_name):
         print('\n'*2);
         video = VideoFileClip(video_path);
-        video.audio.write_audiofile('{0}.mp3'.format(mp3_name));
+        video.audio.write_audiofile('{0}.mp3'.format(mp3_name), verbose=False, logger=None);
         video.close();
         mp3_path = os.path.dirname(video_path) + '\{0}.mp3'.format(mp3_name);
         self.complete_audiofile(mp3_path);
