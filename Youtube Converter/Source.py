@@ -1,6 +1,4 @@
-import sys;
 from os import path;
-
 from Converters.MP3Converter import *;
 from Tools.Utilities import *;
 from Tools.YoutubeVideo import *;
