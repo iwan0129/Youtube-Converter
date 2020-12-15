@@ -99,6 +99,7 @@ git clone https://github.com/iwan0129/Youtube-Converter.git
 
 ## Usage
 
+### Youtube Converter
 Start the program.<br>
 Once the program outputs to enter url copy the url of the youtube video and paste it.<br>
 Then press enter and wait for the program to convert the video<br>
