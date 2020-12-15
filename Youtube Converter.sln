@@ -7,6 +7,19 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Youtube Converter", "Youtub
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Youtube Converter GUI", "Youtube Converter GUI\Youtube Converter GUI.pyproj", "{E1AE7947-0529-42C4-BBA3-9EFC76E37889}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{16BE2751-73A7-4FF5-9BD6-B925228D6A8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Converters", "Converters", "{6A592265-999A-4056-88E6-237EE8976947}"
+	ProjectSection(SolutionItems) = preProject
+		Core\Converters\MP3Converter.py = Core\Converters\MP3Converter.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{0FEE2684-7341-4A6D-8471-EFC3DE320C4D}"
+	ProjectSection(SolutionItems) = preProject
+		Core\Tools\Utilities.py = Core\Tools\Utilities.py
+		Core\Tools\YoutubeVideo.py = Core\Tools\YoutubeVideo.py
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +33,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A592265-999A-4056-88E6-237EE8976947} = {16BE2751-73A7-4FF5-9BD6-B925228D6A8D}
+		{0FEE2684-7341-4A6D-8471-EFC3DE320C4D} = {16BE2751-73A7-4FF5-9BD6-B925228D6A8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B17383A-3307-4676-984B-E88C07B6FE9A}
