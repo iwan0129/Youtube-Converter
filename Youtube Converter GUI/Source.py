@@ -62,7 +62,12 @@ while True:
         def download_video(url):
             global current_title;
             try:
-                video = YoutubeVideo(url, progress_callback, complete_callback);                            
+                video = YoutubeVideo(url, progress_callback, complete_callback);        
+                
+                if contains_invalid_chars(video.title):
+                    video.title = format_title(video.title);
+                    pass;
+
                 video_path = video.download();
             
                 if (video_path != None):

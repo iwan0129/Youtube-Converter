@@ -21,7 +21,12 @@ while True:
 
     if (is_youtubeURL(url)):
         try:
-            video = YoutubeVideo(url, progress_callback, complete_callback);                    
+            video = YoutubeVideo(url, progress_callback, complete_callback);
+
+            if contains_invalid_chars(video.title):
+                video.title = format_title(video.title);
+                pass;              
+
             video_path = video.download();  
             
             if (video_path != None):

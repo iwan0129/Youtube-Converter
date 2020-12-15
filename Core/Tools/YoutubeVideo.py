@@ -9,9 +9,10 @@ class YoutubeVideo:
 
     def __init__(self, url, progress_callback=None, complete_callback=None):
         self.youtube = YouTube(url, on_progress_callback=self.on_progress_callback, on_complete_callback=self.on_complete_callback);
-        self.title = format_title(self.youtube.title) if contains_invalid_chars(self.youtube.title) else self.youtube.title;
+        self.title = self.youtube.title;
         self.progress_callback = progress_callback;
         self.complete_callback = complete_callback;
+        pass;
 
     def on_progress_callback(self, stream = None, chunk = None, file_handle = None, bytes_remaining = None):
         file_size = stream.filesize;
