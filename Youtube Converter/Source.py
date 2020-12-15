@@ -1,16 +1,13 @@
 from Converters.MP3Converter import *;
 from Tools.Utilities import *;
-from pytube import YouTube;
-from pytube import Playlist;
+from Tools.YoutubeVideo import *;
 
-def progress_callback(stream = None, chunk = None, file_handle = None, bytes_remaining = None):
-        file_size = stream.filesize;
-        remaining = file_size - file_handle;
-        print('\r' + '{0} [%s%s]%.2f%%'.format(current_title) 
+def progress_callback(video, file_size, remaining):
+        print('\r' + '{0} [%s%s]%.2f%%'.format(video.title) 
               % ('█' * int(remaining*20/file_size), ' '*(20-int(remaining*20/file_size)), float(remaining/file_size*100)), end='');
         pass;
 
-def complete_callback(stream, file_handle):
+def complete_callback(video, file_handle):
         print('\n'*2);
         print(file_handle);    
         pass;
@@ -23,14 +20,12 @@ while True:
 
     if (is_youtubeURL(url)):
         try:
-            youtube = YouTube(url, on_progress_callback=progress_callback, on_complete_callback=complete_callback);                    
-            current_title = format_title(youtube.title) if contains_invalid_chars(youtube.title) else youtube.title;
-            video_stream = youtube.streams.filter().first();
+            video = YoutubeVideo(url, progress_callback, complete_callback);                    
+            video_path = video.download();  
             
-            if (video_stream != None):
-                video_path = video_stream.download(filename=current_title);
+            if (video_path != None):
                 mp3converter = MP3Converter();
-                mp3converter.convert(video_path, current_title);
+                mp3converter.convert(video_path, video.title);
                 os.unlink(video_path);
                 pass;
             else:

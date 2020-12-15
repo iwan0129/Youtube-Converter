@@ -24,6 +24,9 @@
     <Compile Include="Converters\MP3Converter.py" />
     <Compile Include="Tools\Utilities.py" />
     <Compile Include="Source.py" />
+    <Compile Include="Tools\YoutubeVideo.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />

@@ -26,6 +26,7 @@
     <Compile Include="Converters\MP3Converter.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tools\YoutubeVideo.py" />
     <Compile Include="Tools\Utilities.py">
       <SubType>Code</SubType>
     </Compile>

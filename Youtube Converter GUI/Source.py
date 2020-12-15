@@ -1,7 +1,6 @@
 from Converters.MP3Converter import *;
 from Tools.Utilities import *;
-from pytube import YouTube;
-from pytube import Playlist;
+from Tools.YoutubeVideo import *;
 from threading import Thread;
 
 import time;
@@ -21,19 +20,16 @@ current_title = '';
 download_notified = False;
 downloading = False;
 
-def progress_callback(stream = None, chunk = None, file_handle = None, bytes_remaining = None):
-    global current_title;
+def progress_callback(video, file_size, remaining):
     global download_notified;
 
-    file_size = stream.filesize;
-    remaining = file_size - file_handle;
     downloaded = float(remaining/file_size*100);
     progress_bar = window['progress'];
     progress_bar.UpdateBar(downloaded, 100);
     
     if not download_notified:
         textbox = window['-OUTPUT-'];
-        textbox.update('Downloading {0}'.format(current_title));
+        textbox.update('Downloading {0}'.format(video.title));
         download_notified = True;
         pass;
 
@@ -42,7 +38,7 @@ def progress_callback(stream = None, chunk = None, file_handle = None, bytes_rem
         pass;
     pass;
 
-def complete_callback(stream, file_handle):
+def complete_callback(video, file_handle):
     textbox = window['-OUTPUT-'];
     textbox.update(textbox.get() + '\nWriting Audio File...\n');
     pass;
@@ -66,15 +62,12 @@ while True:
         def download_video(url):
             global current_title;
             try:
-                youtube = YouTube(url, on_progress_callback=progress_callback, on_complete_callback=complete_callback);                    
-                current_title = format_title(youtube.title) if contains_invalid_chars(youtube.title) else youtube.title;
-                video_stream = youtube.streams.filter().first();
+                video = YoutubeVideo(url, progress_callback, complete_callback);                            
+                video_path = video.download();
             
-                if (video_stream != None):
-                    video_path = video_stream.download(filename=current_title);
+                if (video_path != None):
                     mp3_converter = MP3Converter(complete_audiofile);
-                    mp3_converter.convert(video_path, current_title)
-                    current_title = '';
+                    mp3_converter.convert(video_path, video.title)
                     os.unlink(video_path);
                     pass;
             except Exception as ex:
