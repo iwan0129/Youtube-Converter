@@ -21,7 +21,7 @@
   <h3 align="center">Youtube Converter</h3>
 
   <p align="center">
-    Simple program to convert youtube video to mp3 file
+    Convert Youtube Videos Into MP3
     <br />
     <a href="https://github.com/iwan0129/Youtube-Converter"><strong>Explore the docs »</strong></a>
     <br />
@@ -57,7 +57,7 @@
 # Youtube Converter GUI 
 ![Screenshot-2]
 
-Simple program to convert youtube video to mp3 file
+Program That Converts Youtube Videos into MP3
 
 ### Built With
 Python 3.7.8
