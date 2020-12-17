@@ -6,12 +6,12 @@ from Tools.YoutubeVideo import *;
 def progress_callback(video, file_size, remaining):
         print('\r' + '{0} [%s%s]%.2f%%'.format(video.title) 
               % ('█' * int(remaining*20/file_size), ' '*(20-int(remaining*20/file_size)), float(remaining/file_size*100)), end='');
-        pass;
+pass;
 
 def complete_callback(video, file_handle):
         print('\n'*2);
         print(file_handle);    
-        pass;
+pass;
 
 while True:
 
@@ -46,4 +46,4 @@ while True:
         pass;
 
     print('\n' * 2);
-    pass;
+pass;

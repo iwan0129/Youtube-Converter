@@ -36,12 +36,12 @@ def progress_callback(video, file_size, remaining):
     if downloaded == 100:
         download_notified = False;
         pass;
-    pass;
+pass;
 
 def complete_callback(video, file_handle):
     textbox = window['-OUTPUT-'];
     textbox.update(textbox.get() + '\nWriting Audio File...\n');
-    pass;
+pass;
 
 def complete_audiofile(path):
     global downloading;
@@ -52,7 +52,7 @@ def complete_audiofile(path):
     progress_bar.UpdateBar(0, 100);
 
     downloading = False;
-    pass;
+pass;
 
 while True:
     event, values = window.read();
@@ -87,4 +87,4 @@ while True:
         window.close();
         break;     
         pass;
-    pass;
+pass;

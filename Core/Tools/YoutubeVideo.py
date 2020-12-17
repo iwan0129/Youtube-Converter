@@ -1,5 +1,4 @@
 try:
-    from Tools.Utilities import *;
     from pytube import YouTube;
     from pytube import Playlist;
 except Exception as ex:
@@ -12,7 +11,7 @@ class YoutubeVideo:
         self.title = self.youtube.title;
         self.progress_callback = progress_callback;
         self.complete_callback = complete_callback;
-        pass;
+    pass;
 
     def on_progress_callback(self, stream = None, chunk = None, file_handle = None, bytes_remaining = None):
         file_size = stream.filesize;
@@ -21,13 +20,13 @@ class YoutubeVideo:
         if self.progress_callback != None:
             self.progress_callback(self, file_size, remaining);
             pass;
-        pass;
+    pass;
     
     def on_complete_callback(self, stream, file_handle):
         if self.complete_callback != None:
             self.complete_callback(self, file_handle);
             pass;
-        pass;
+    pass;
        
     def download(self):
         video_stream = self.youtube.streams.filter().first();
@@ -36,3 +35,4 @@ class YoutubeVideo:
             return video_stream.download(filename=self.title);
         else:
             return None;
+    pass;
