@@ -12,30 +12,17 @@ layout = [[sg.Text('                             Youtube Url', font='Courier, 16
           [sg.Input(size=(42, 1), key='Url', font='Courier, 14')],
           [sg.Text('                                         '), sg.Radio('MP3', 'ConverterCheck', default=True, key='MP3_Check'), sg.Radio('MP4', 'ConverterCheck', default=False, key='MP4_Check')],
           [sg.ProgressBar(1, orientation='h', size=(42, 20), key='Progress')],
-          [sg.Multiline(size=(50, 10), key='Output', font='Courier, 12', background_color='white', text_color='black')],
+          [sg.Multiline(size=(50, 10), key='Output', disabled=True, font='Courier, 12')],
           [sg.Button(size=(42, 1), button_text='Convert', font='Courier, 14', key='Convert')]];
 
-window = sg.Window('Youtube Converter', layout);
+window = sg.Window('Youtube Converter', layout, finalize=True)
 
-download_notified = False;
 downloading = False;
 
 def progress_callback(video, file_size, remaining):
-    global download_notified;
-
     downloaded = float(remaining/file_size*100);
     progress_bar = window['Progress'];
-    progress_bar.UpdateBar(downloaded, 100);
-    
-    if not download_notified:
-        textbox = window['Output'];
-        textbox.update('Downloading {0}\n'.format(video.title));
-        download_notified = True;
-        pass;
-
-    if downloaded == 100:
-        download_notified = False;
-        pass;
+    progress_bar.UpdateBar(downloaded, 100);   
 pass;
 
 def complete_callback(video, file_handle):
@@ -61,7 +48,10 @@ def download_video(url, download_type):
             video.title = format_title(video.title);
             pass;
       
+        textbox.update('Downloading {0}\n'.format(video.title));
+
         if download_type == 'mp3':
+          
             video_path = video.download();
 
             if (video_path != None):
@@ -77,9 +67,9 @@ def download_video(url, download_type):
             video.download('resolution');
             pass;
 
-        downloading = False;
-
         textbox.update(textbox.get() + 'Finnished Downloading !\n');
+
+        downloading = False;
                            
     except Exception as ex:
         print(ex.args);
