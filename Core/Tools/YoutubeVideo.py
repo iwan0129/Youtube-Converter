@@ -28,11 +28,9 @@ class YoutubeVideo:
             pass;
     pass;
        
-    def download(self):
-        video_stream = self.youtube.streams.filter().first();
+    def download(self, order = None):
 
-        if (video_stream != None):
-            return video_stream.download(filename=self.title);
-        else:
-            return None;
+        video_stream = self.youtube.streams.filter().order_by(order).first() if order != None else self.youtube.streams.filter().first();
+        
+        return video_stream.download() if video_stream != None else None;
     pass;
