@@ -64,7 +64,7 @@ def download_video(url, download_type):
             pass; 
 
         elif download_type == 'mp4':
-            video.download('resolution');
+            video.download(order_by = 'resolution');
             pass;
 
         textbox.update(textbox.get() + 'Finnished Downloading !\n');
@@ -73,6 +73,7 @@ def download_video(url, download_type):
                            
     except Exception as ex:
         print(ex.args);
+        downloading = False;
         pass;
 pass;           
 
