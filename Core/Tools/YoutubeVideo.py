@@ -30,7 +30,7 @@ class YoutubeVideo:
         pass;
     pass;
        
-    def download(self, subtype='mp4', progressive = True, only_audio = False, only_video = False, order_by = None):
+    def download(self, subtype='mp4', progressive = False, only_audio = False, only_video = False, order_by = None):
         video_streams = self.youtube.streams.filter(subtype = subtype, progressive = progressive, only_audio = only_audio, only_video = only_video).desc();
         video_stream = video_streams.order_by(order_by).first() if order_by != None else video_streams.first();
         return video_stream.download() if video_stream != None else None;

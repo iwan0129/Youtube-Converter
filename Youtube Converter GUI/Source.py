@@ -52,7 +52,7 @@ def download_video(url, download_type):
 
         if download_type == 'mp3':
           
-            video_path = video.download();
+            video_path = video.download(progressive = True, order_by = 'abr');
 
             if (video_path != None):
                textbox.update(textbox.get() + 'Writing Audio File...\n');
@@ -62,17 +62,16 @@ def download_video(url, download_type):
                os.unlink(video_path);
             pass;                  
         elif download_type == 'mp4':
-            video.download(order_by = 'resolution');
+            video.download(progressive = True);
         pass;
 
         textbox.update(textbox.get() + 'Finnished Downloading !\n');
-
-        downloading = False;
                            
     except Exception as ex:
         print(ex.args);
-        downloading = False;
     pass;
+
+    downloading = False;
 pass;           
 
 while True:
