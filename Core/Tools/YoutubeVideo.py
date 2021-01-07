@@ -2,7 +2,9 @@ try:
     from pytube import YouTube;
     from pytube import Playlist;
 except Exception as ex:
-        print('Missing modules: {0}'.format(ex.args));
+    print('Missing modules: {0}'.format(ex.args));
+pass;
+        
 
 class YoutubeVideo:
 
@@ -19,13 +21,13 @@ class YoutubeVideo:
 
         if self.progress_callback != None:
             self.progress_callback(self, file_size, remaining);
-            pass;
+        pass;
     pass;
     
     def on_complete_callback(self, stream, file_handle):
         if self.complete_callback != None:
             self.complete_callback(self, file_handle);
-            pass;
+        pass;
     pass;
        
     def download(self, subtype='mp4', progressive = True, only_audio = False, only_video = False, order_by = None):

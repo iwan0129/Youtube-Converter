@@ -46,7 +46,7 @@ def download_video(url, download_type):
 
         if contains_invalid_chars(video.title):
             video.title = format_title(video.title);
-            pass;
+        pass;
       
         textbox.update('Downloading {0}\n'.format(video.title));
 
@@ -60,12 +60,10 @@ def download_video(url, download_type):
                mp3_converter.convert(video_path, video.title);
                textbox.update(textbox.get() + 'Removing LeftOver File...\n');
                os.unlink(video_path);
-               pass;                  
-            pass; 
-
+            pass;                  
         elif download_type == 'mp4':
             video.download(order_by = 'resolution');
-            pass;
+        pass;
 
         textbox.update(textbox.get() + 'Finnished Downloading !\n');
 
@@ -74,7 +72,7 @@ def download_video(url, download_type):
     except Exception as ex:
         print(ex.args);
         downloading = False;
-        pass;
+    pass;
 pass;           
 
 while True:
@@ -86,8 +84,8 @@ while True:
         download_type = 'mp3' if values['MP3_Check'] else 'mp4';
         Thread(target = download_video, args=(values['Url'], download_type,), daemon=True).start();
         downloading = True;
-        pass;
     elif event == sg.WINDOW_CLOSED:
         window.close();
-        break;     
+        break;
+    pass;
 pass;
