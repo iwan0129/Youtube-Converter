@@ -9,8 +9,7 @@ pass;
 class YoutubeVideo:
 
     def __init__(self, url, progress_callback=None, complete_callback=None):
-        self.youtube = YouTube(url, on_progress_callback=self.on_progress_callback, 
-                               on_complete_callback=self.on_complete_callback);
+        self.youtube = YouTube(url, on_progress_callback=self.on_progress_callback, on_complete_callback=self.on_complete_callback);
         self.title = self.youtube.title;
         self.progress_callback = progress_callback;
         self.complete_callback = complete_callback;
@@ -31,10 +30,8 @@ class YoutubeVideo:
         pass;
     pass;
        
-    def download(self, subtype='mp4', progressive = False, 
-                 only_audio = False, only_video = False, order_by = None):
-        video_streams = self.youtube.streams.filter(subtype = subtype, progressive = progressive, 
-                                                    only_audio = only_audio, only_video = only_video).desc();
+    def download(self, subtype='mp4', progressive = False, only_audio = False, only_video = False, order_by = None):
+        video_streams = self.youtube.streams.filter(subtype = subtype, progressive = progressive, only_audio = only_audio, only_video = only_video).desc();
         video_stream = video_streams.order_by(order_by).first() if order_by != None else video_streams.first();
         return video_stream.download() if video_stream != None else None;
     pass;
