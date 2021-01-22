@@ -57,8 +57,6 @@
 # Youtube Converter GUI 
 ![Screenshot-2]
 
-Program That Converts Youtube Videos into MP3
-
 ### Built With
 Python 3.7.8
 
