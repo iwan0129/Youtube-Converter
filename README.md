@@ -66,7 +66,8 @@ Python 3.7.8
 
 ### Prerequisites
 
-#### Youtube Converter
+* Python 3.7.8 or Higher
+
 * pytube
 ```sh
 $ pip install pytube
@@ -77,14 +78,6 @@ $ pip install moviepy
 ```
 
 #### Youtube Converter GUI
-* pytube
-```sh
-$ pip install pytube
-```
-* moviepy
-```sh
-$ pip install moviepy
-```
 * PySimpleGUI
 ```sh
 $ pip install PySimpleGUI
