@@ -19,5 +19,4 @@ class MP3Converter:
         if self.complete_audiofile != None:
             mp3_path = os.path.dirname(video_path) + '\{0}.mp3'.format(mp3_name);
             self.complete_audiofile(mp3_path);
-        pass;
     pass;

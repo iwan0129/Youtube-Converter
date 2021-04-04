@@ -21,13 +21,11 @@ class YoutubeVideo:
 
         if self.progress_callback != None:
             self.progress_callback(self, file_size, remaining);
-        pass;
     pass;
     
     def on_complete_callback(self, stream, file_handle):
         if self.complete_callback != None:
             self.complete_callback(self, file_handle);
-        pass;
     pass;
        
     def download(self, subtype='mp4', progressive = False, only_audio = False, only_video = False, order_by = None):

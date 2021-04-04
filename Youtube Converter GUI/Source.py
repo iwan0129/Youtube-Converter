@@ -46,7 +46,6 @@ def download_video(url, download_type):
 
         if contains_invalid_chars(video.title):
             video.title = format_title(video.title);
-        pass;
       
         textbox.update('Downloading {0}\n'.format(video.title));
 
@@ -60,10 +59,9 @@ def download_video(url, download_type):
                mp3_converter.convert(video_path, video.title);
                textbox.update(textbox.get() + 'Removing LeftOver File...\n');
                os.unlink(video_path);
-            pass;                  
+
         elif download_type == 'mp4':
             video.download(progressive = True);
-        pass;
 
         textbox.update(textbox.get() + 'Finnished Downloading !\n');
                            
@@ -86,5 +84,4 @@ while True:
     elif event == sg.WINDOW_CLOSED:
         window.close();
         break;
-    pass;
 pass;

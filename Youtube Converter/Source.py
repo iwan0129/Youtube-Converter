@@ -32,13 +32,12 @@ while True:
                 os.unlink(video_path);
             else:
                 print('Unable to download video due to youtube protection.\nPlease try with other video.');
-            pass;               
+
         except Exception as ex:
             print(ex.args);
         pass;
     else:
         print('\nError! Please enter valid youtube url');
-    pass;
 
     print('\n\n\n');
 pass;
