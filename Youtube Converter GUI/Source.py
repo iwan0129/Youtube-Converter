@@ -11,7 +11,7 @@ sg.theme('dark grey 9');
 layout = [[sg.Text((' ' * 30) + 'Youtube Url', font='Courier, 16')],
           [sg.Input(size=(42, 1), key='Url', font='Courier, 14')],
           [sg.Text('                                         '), sg.Radio('MP3', 'ConverterCheck', default=True, key='MP3_Check'), sg.Radio('MP4', 'ConverterCheck', default=False, key='MP4_Check')],
-          [sg.ProgressBar(1, orientation='h', size=(42.5, 20), key='Progress')],
+          [sg.ProgressBar(1, orientation='h', size=(35.9, 20), key='Progress')],
           [sg.Multiline(size=(50, 10), key='Output', disabled=True, font='Courier, 12')],
           [sg.Button(size=(42, 1), button_text='Convert', font='Courier, 14', key='Convert')]];
 
